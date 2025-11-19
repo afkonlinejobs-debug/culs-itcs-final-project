@@ -78,8 +78,8 @@ footer{background:#fafbfc;padding:40px 20px;margin-top:40px;border-top:1px solid
 
 
 .mobile-logo-right { display:flex; align-items:center; gap:10px; }
-.slide-menu { position: fixed; top:0; right: -320px; width:320px; height:100%; background:#fff; box-shadow: -6px 0 24px rgba(0,0,0,0.12); transition: right .35s ease; z-index:1000; padding:20px; overflow:auto; }
-.slide-menu.open { right: 0; }
+.slide-menu { position: fixed; top:0; left: -320px; width:320px; height:100%; background:#fff; box-shadow: -6px 0 24px rgba(0,0,0,0.12); transition: right .35s ease; z-index:1000; padding:20px; overflow:auto; }
+.slide-menu.open { left: 0; }
 .slide-menu a { display:block; padding:12px 8px; color:var(--nav-text); text-decoration:none; border-bottom:1px solid rgba(11,18,32,0.03); }
 .hamburger-open .bar1 { transform: translateY(5px) rotate(45deg); }
 .hamburger-open .bar2 { opacity: 0; }
