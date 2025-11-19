@@ -1,0 +1,157 @@
+
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Home - Dhamrai Clay Heritage</title><link rel="stylesheet" href="shared.css"></head><body>
+<div class="topbar"><div class="container topnav"><div class="logo">DCH</div><nav class="nav-links"><a href="index.html" class="active">Home</a><a href="meet_potters.html">Meet the Potters</a><a href="gallery_shop.html">Gallery &amp; Shop</a><a href="plan_visit.html">Plan Your Visit</a><a href="contact_support.html">Contact</a></nav></div></div>
+
+<section class="hero"><div class="container"><h1>Traditional Pottery of Dhamrai</h1><p>Discover Centuries of Craftsmanship</p><a class="cta" href="plan_visit.html">Explore the Heritage</a></div></section>
+
+<main class="container">
+  <h2 class="section-title">Explore Dhamrai Clay Heritage</h2>
+  <div class="cards">
+    <article class="card"><div class="img"></div><div class="card-body"><h3>Art &amp; Process</h3><p>Learn about the traditional techniques passed down through generations.</p><a class="btn" href="meet_potters.html">Learn More</a></div></article>
+    <article class="card"><div class="img"></div><div class="card-body"><h3>Meet the Potters</h3><p>Get to know the master artisans keeping this craft alive.</p><a class="btn" href="meet_potters.html">View Profiles</a></div></article>
+    <article class="card"><div class="img"></div><div class="card-body"><h3>Shop Collection</h3><p>Browse and purchase authentic handcrafted pottery pieces.</p><a class="btn" href="gallery_shop.html">Shop Now</a></div></article>
+  </div>
+
+  <section class="process">
+    <h3 class="section-title">The Pottery Making Process</h3>
+    <div class="process-grid">
+      <div class="card"><div class="img" style="height:120px"></div><div class="card-body"><strong>1. Clay Preparation</strong><p style="color:#666">Local clay is carefully sourced and prepared.</p></div></div>
+      <div class="card"><div class="img" style="height:120px"></div><div class="card-body"><strong>2. Hand Shaping</strong><p style="color:#666">Master potters shape each piece using a traditional wheel.</p></div></div>
+      <div class="card"><div class="img" style="height:120px"></div><div class="card-body"><strong>3. Drying Process</strong><p style="color:#666">Pieces are sun-dried under controlled conditions.</p></div></div>
+      <div class="card"><div class="img" style="height:120px"></div><div class="card-body"><strong>4. Kiln Firing</strong><p style="color:#666">Traditional kilns fire the pottery to create lasting pieces.</p></div></div>
+    </div>
+  </section>
+
+  <section class="map-contact">
+    <div class="map"></div>
+    <aside class="contact-box">
+      <h4>Location Details</h4>
+      <p>Kakran Village, Dhamrai, Dhaka District, Bangladesh</p>
+      <p><strong>Opening Hours</strong><br>Saturday - Thursday: 9:00 AM - 5:00 PM</p>
+      <p><strong>Contact</strong><br>Phone: +880 000-0000000<br>Email: info@dhamraiclay.org</p>
+      <p><a class="cta" href="plan_visit.html">Plan Your Visit</a></p>
+    </aside>
+  </section>
+</main>
+
+<footer><div class="container footer-grid"><div><strong>Dhamrai Clay Heritage Project</strong><p>Preserving the traditional pottery heritage of Kakran, Dhamrai.</p></div><div><a>Home</a><a>Meet the Potters</a><a>Gallery & Shop</a></div><div style="text-align:right"><p>Authors:<br>Khan Abul Forhad<br>Uddin Md Main<br>Islam Shaiful</p></div></div></footer>
+
+<script>
+// MENU: Slide-in menu, animated hamburger, keyboard support
+document.addEventListener('DOMContentLoaded', function(){
+  // create mobile controls if not present
+  const topnav = document.querySelector('.topnav');
+  if(topnav){
+    // add mobile hamburger and right logo if not present (safe to add even if exists)
+    if(!document.getElementById('mobile-hamburger')){
+      const btn = document.createElement('button');
+      btn.id = 'mobile-hamburger';
+      btn.className = 'mobile-hamburger';
+      btn.setAttribute('aria-label','Open menu');
+      btn.setAttribute('aria-expanded','false');
+      btn.innerHTML = '<span class=\"bar bar1\"></span><span class=\"bar bar2\"></span><span class=\"bar bar3\"></span>';
+      // insert as first child
+      topnav.insertBefore(btn, topnav.firstChild);
+      // right logo container (if not exists)
+      if(!document.querySelector('.mobile-logo-right')){
+        const logoBox = document.createElement('div');
+        logoBox.className = 'mobile-logo-right';
+        logoBox.innerHTML = '<div class=\"logo-square\">DCH</div><div class=\"logo-text\">Dhamrai Clay Heritage</div>';
+        topnav.appendChild(logoBox);
+      }
+      // create slide menu
+      const menu = document.createElement('nav');
+      menu.id = 'slide-menu';
+      menu.className = 'slide-menu';
+      menu.setAttribute('aria-hidden','true');
+      menu.setAttribute('aria-label','Mobile Navigation');
+      menu.innerHTML = '<a href=\"index.html\">Home</a><a href=\"meet_potters.html\">Meet the Potters</a><a href=\"gallery_shop.html\">Gallery & Shop</a><a href=\"plan_visit.html\">Plan Your Visit</a><a href=\"contact_support.html\">Contact & Support</a>';
+      document.body.appendChild(menu);
+      // toggle behavior
+      function toggleMenu(open){
+        const root = document.documentElement;
+        const isOpen = menu.classList.contains('open');
+        if(open === undefined) open = !isOpen;
+        if(open){
+          menu.classList.add('open');
+          root.classList.add('hamburger-open');
+          document.getElementById('mobile-hamburger').setAttribute('aria-expanded','true');
+          menu.setAttribute('aria-hidden','false');
+          // trap focus
+          menu.querySelector('a').focus();
+          document.body.style.overflow = 'hidden';
+        } else {
+          menu.classList.remove('open');
+          root.classList.remove('hamburger-open');
+          document.getElementById('mobile-hamburger').setAttribute('aria-expanded','false');
+          menu.setAttribute('aria-hidden','true');
+          document.body.style.overflow = '';
+          document.getElementById('mobile-hamburger').focus();
+        }
+      }
+      btn.addEventListener('click', function(e){ toggleMenu(); });
+      // keyboard support: Esc closes menu, Tab cycles inside
+      document.addEventListener('keydown', function(e){
+        const isOpen = menu.classList.contains('open');
+        if(e.key === 'Escape' && isOpen){ toggleMenu(false); }
+      });
+      // close when clicking outside
+      menu.addEventListener('click', function(e){
+        if(e.target.tagName === 'A'){ toggleMenu(false); }
+      });
+    }
+  }
+
+  // SIMPLE CAROUSEL AUTOPLAY for elements with class .hero (if multiple slides exist)
+  try {
+    const hero = document.querySelector('.hero');
+    if(hero && hero.dataset.autoplay !== 'off'){
+      // if slides inside .hero .slides, implement auto rotate
+      const slides = hero.querySelectorAll('.slide');
+      if(slides.length > 1){
+        let idx = 0;
+        slides.forEach((s,i)=> s.style.display = i===0 ? 'block' : 'none');
+        setInterval(()=>{
+          slides[idx].style.display='none';
+          idx = (idx+1) % slides.length;
+          slides[idx].style.display='block';
+        }, 4500);
+      }
+    }
+  } catch(e){ console.log(e); }
+
+  // SIMPLE CART: add-to-cart using localStorage, update count badge
+  function updateCartCount(){
+    const cart = JSON.parse(localStorage.getItem('dch_cart')||'[]');
+    const elems = document.querySelectorAll('.cart-count');
+    elems.forEach(el=> el.textContent = cart.length);
+  }
+  updateCartCount();
+  document.body.addEventListener('click', function(e){
+    const t = e.target;
+    if(t && t.matches && (t.matches('.add-btn') || t.matches('.add-to-cart') || t.closest('.add-btn'))){
+      // get product title & price from nearest product card
+      const card = t.closest('.product') || t.closest('.card') || t.closest('article');
+      if(!card) return;
+      const title = (card.querySelector('strong') && card.querySelector('strong').innerText) || card.querySelector('h3')?.innerText || 'Product';
+      const priceEl = card.querySelector('.price');
+      const priceText = priceEl ? priceEl.innerText.replace(/[^\d]/g,'') : '0';
+      const product = { title: title.trim(), price: priceText };
+      const cart = JSON.parse(localStorage.getItem('dch_cart')||'[]');
+      cart.push(product);
+      localStorage.setItem('dch_cart', JSON.stringify(cart));
+      updateCartCount();
+      // simple feedback
+      t.innerText = 'Added';
+      t.disabled = true;
+      setTimeout(()=>{ t.innerText = 'Add to Cart'; t.disabled = false; }, 1200);
+    }
+  });
+
+  // Accessibility: ensure images have alt attribute; add role where missing
+  document.querySelectorAll('img').forEach(img=>{ if(!img.hasAttribute('alt')) img.setAttribute('alt','Image placeholder'); });
+});
+</script>
+
+</body></html>
