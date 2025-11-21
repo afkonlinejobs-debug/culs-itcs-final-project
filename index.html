@@ -3,23 +3,99 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Home - Dhamrai Clay Heritage</title><link rel="stylesheet" href="shared.css"></head><body>
 <div class="topbar"><div class="container topnav"><div class="logo">DCH</div><nav class="nav-links"><a href="index.html" class="active">Home</a><a href="meet_potters.html">Meet the Potters</a><a href="gallery_shop.html">Gallery &amp; Shop</a><a href="plan_visit.html">Plan Your Visit</a><a href="contact_support.html">Contact</a></nav></div></div>
 
-<section class="hero"><div class="container"><h1>Traditional Pottery of Dhamrai</h1><p>Discover Centuries of Craftsmanship</p><a class="cta" href="plan_visit.html">Explore the Heritage</a></div></section>
+<section class="hero" data-hero-src="img/1.jpg">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <button class="hero-nav hero-prev" aria-label="Previous slide">‹</button>
+  <button class="hero-nav hero-next" aria-label="Next slide">›</button>
+  <!-- Example slides: replace `assets/slide1.jpg` and `assets/slide2.jpg` with your images in `assets/` -->
+  <div class="slide" style="background-image:url('img/slide1.jpg')" aria-hidden="true"></div>
+  <div class="slide" style="background-image:url('img/slide2.jpg')" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <h1>Traditional Pottery of Dhamrai</h1>
+    <p>Discover Centuries of Craftsmanship</p>
+    <a class="cta" href="plan_visit.html">Explore the Heritage</a>
+  </div>
+</section>
 
 <main class="container">
   <h2 class="section-title">Explore Dhamrai Clay Heritage</h2>
   <div class="cards">
-    <article class="card"><div class="img"></div><div class="card-body"><h3>Art &amp; Process</h3><p>Learn about the traditional techniques passed down through generations.</p><a class="btn" href="meet_potters.html">Learn More</a></div></article>
-    <article class="card"><div class="img"></div><div class="card-body"><h3>Meet the Potters</h3><p>Get to know the master artisans keeping this craft alive.</p><a class="btn" href="meet_potters.html">View Profiles</a></div></article>
-    <article class="card"><div class="img"></div><div class="card-body"><h3>Shop Collection</h3><p>Browse and purchase authentic handcrafted pottery pieces.</p><a class="btn" href="gallery_shop.html">Shop Now</a></div></article>
+    <article class="card">
+      <div class="img">
+        <img src="img/shop1.jpg" alt="Handmade terracotta pot on display" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Art &amp; Process</h3>
+        <p>Learn about the traditional techniques passed down through generations.</p>
+        <a class="btn" href="meet_potters.html">Learn More</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="img">
+        <img src="img/shop2.jpg" alt="Potter shaping clay on a wheel" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Meet the Potters</h3>
+        <p>Get to know the master artisans keeping this craft alive.</p>
+        <a class="btn" href="meet_potters.html">View Profiles</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="img">
+        <img src="img/shop3.webp" alt="Collection of finished pottery pieces" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Shop Collection</h3>
+        <p>Browse and purchase authentic handcrafted pottery pieces.</p>
+        <a class="btn" href="gallery_shop.html">Shop Now</a>
+      </div>
+    </article>
   </div>
 
   <section class="process">
     <h3 class="section-title">The Pottery Making Process</h3>
     <div class="process-grid">
-      <div class="card"><div class="img" style="height:120px"></div><div class="card-body"><strong>1. Clay Preparation</strong><p style="color:#666">Local clay is carefully sourced and prepared.</p></div></div>
-      <div class="card"><div class="img" style="height:120px"></div><div class="card-body"><strong>2. Hand Shaping</strong><p style="color:#666">Master potters shape each piece using a traditional wheel.</p></div></div>
-      <div class="card"><div class="img" style="height:120px"></div><div class="card-body"><strong>3. Drying Process</strong><p style="color:#666">Pieces are sun-dried under controlled conditions.</p></div></div>
-      <div class="card"><div class="img" style="height:120px"></div><div class="card-body"><strong>4. Kiln Firing</strong><p style="color:#666">Traditional kilns fire the pottery to create lasting pieces.</p></div></div>
+      <div class="card">
+        <div class="img">
+          <img src="img/Pottery1.webp" alt="Clay preparation" loading="lazy">
+        </div>
+        <div class="card-body">
+          <strong>1. Clay Preparation</strong>
+          <p>Local clay is carefully sourced and prepared.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img">
+          <img src="img/Pottery2.webp" alt="Hand shaping pottery" loading="lazy">
+        </div>
+        <div class="card-body">
+          <strong>2. Hand Shaping</strong>
+          <p>Master potters shape each piece using a traditional wheel.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img">
+          <img src="img/Pottery3.webp" alt="Drying pottery in the sun" loading="lazy">
+        </div>
+        <div class="card-body">
+          <strong>3. Drying Process</strong>
+          <p>Pieces are sun-dried under controlled conditions.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img">
+          <img src="img/Pottery4.webp" alt="Kiln firing traditional pottery" loading="lazy">
+        </div>
+        <div class="card-body">
+          <strong>4. Kiln Firing</strong>
+          <p>Traditional kilns fire the pottery to create lasting pieces.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -40,6 +116,14 @@
 <script>
 // MENU: Slide-in menu, animated hamburger, keyboard support
 document.addEventListener('DOMContentLoaded', function(){
+  // set hero background image from data attribute (e.g. data-hero-src="assets/hero.jpg")
+  try {
+    document.querySelectorAll('.hero').forEach(function(h){
+      var src = h.getAttribute('data-hero-src');
+      var bg = h.querySelector('.hero-bg');
+      if(src && bg){ bg.style.backgroundImage = 'url("' + src + '")'; }
+    });
+  } catch(e){ console.log('hero-bg load error', e); }
   // create mobile controls if not present
   const topnav = document.querySelector('.topnav');
   if(topnav){
@@ -103,23 +187,41 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   }
 
-  // SIMPLE CAROUSEL AUTOPLAY for elements with class .hero (if multiple slides exist)
+  // HERO SLIDER: support slides, prev/next buttons and autoplay
   try {
     const hero = document.querySelector('.hero');
     if(hero && hero.dataset.autoplay !== 'off'){
-      // if slides inside .hero .slides, implement auto rotate
       const slides = hero.querySelectorAll('.slide');
-      if(slides.length > 1){
+      const prevBtn = hero.querySelector('.hero-prev');
+      const nextBtn = hero.querySelector('.hero-next');
+      if(slides.length > 0){
+        const bg = hero.querySelector('.hero-bg');
+        if(bg) bg.style.display = 'none';
         let idx = 0;
-        slides.forEach((s,i)=> s.style.display = i===0 ? 'block' : 'none');
-        setInterval(()=>{
-          slides[idx].style.display='none';
-          idx = (idx+1) % slides.length;
-          slides[idx].style.display='block';
-        }, 4500);
+        const show = (i) => {
+          slides.forEach((s, j) => { s.style.display = j === i ? 'block' : 'none'; });
+          idx = (i + slides.length) % slides.length;
+        };
+        show(0);
+        let interval = null;
+        const start = () => {
+          stop();
+          if(hero.dataset.autoplay === 'off') return;
+          interval = setInterval(() => { show((idx + 1) % slides.length); }, parseInt(hero.dataset.interval) || 4500);
+        };
+        const stop = () => { if(interval){ clearInterval(interval); interval = null; } };
+        if(prevBtn) prevBtn.addEventListener('click', () => { show((idx - 1 + slides.length) % slides.length); start(); });
+        if(nextBtn) nextBtn.addEventListener('click', () => { show((idx + 1) % slides.length); start(); });
+        hero.addEventListener('mouseenter', stop);
+        hero.addEventListener('mouseleave', start);
+        start();
+      } else {
+        // no slides — hide nav buttons (not needed when using single background)
+        if(prevBtn) prevBtn.style.display = 'none';
+        if(nextBtn) nextBtn.style.display = 'none';
       }
     }
-  } catch(e){ console.log(e); }
+  } catch(e){ console.log('hero slider error', e); }
 
   // SIMPLE CART: add-to-cart using localStorage, update count badge
   function updateCartCount(){
