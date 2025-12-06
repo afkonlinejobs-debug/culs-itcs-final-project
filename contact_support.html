@@ -5,12 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Contact & Support</title>
-  <meta name="description" content="Contact Dhamrai Clay Heritage — get in touch for visits, donations, volunteering, or workshop bookings.">
+  <meta name="description"
+    content="Contact Dhamrai Clay Heritage — get in touch for visits, donations, volunteering, or workshop bookings.">
   <meta name="keywords" content="contact Dhamrai, donation, volunteer, pottery support, pottery contact">
   <meta name="author" content="Dhamrai Clay Heritage Project">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Contact & Support — Dhamrai Clay Heritage">
-  <meta property="og:description" content="Get in touch with Dhamrai Clay Heritage for visit planning, support, and workshop bookings.">
+  <meta property="og:description"
+    content="Get in touch with Dhamrai Clay Heritage for visit planning, support, and workshop bookings.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="contact_support.html">
   <meta name="twitter:card" content="summary">
@@ -19,15 +21,18 @@
 
 <body>
   <div class="topbar">
+    <div class="logo">
+      <a style="text-decoration: none;" href="index.html">DCH</a>
+    </div>
     <div class="container topnav">
-      <div class="logo">DCH</div>
       <nav class="nav-links"><a href="index.html">Home</a><a href="meet_potters.html">Meet the Potters</a><a
           href="gallery_shop.html">Gallery &amp; Shop</a><a href="plan_visit.html">Plan Your Visit</a><a
           href="contact_support.html" class="active">Contact</a></nav>
     </div>
   </div>
 
-  <section class="hero" style="background-image: url('img/contact_type.webp'); background-size: cover; background-position: center;">
+  <section class="hero"
+    style="background-image: url('img/contact_type.webp'); background-size: cover; background-position: center;">
     <div class="container">
       <h1>Contact &amp; Support</h1>
       <p>Get in touch with us or support our heritage preservation efforts</p>
@@ -109,8 +114,8 @@
     // MENU: Slide-in menu, animated hamburger, keyboard support
     document.addEventListener('DOMContentLoaded', function () {
       // create mobile controls if not present
-      const topnav = document.querySelector('.topnav');
-      if (topnav) {
+      const topbar = document.querySelector('.topbar');
+      if (topbar) {
         // add mobile hamburger and right logo if not present (safe to add even if exists)
         if (!document.getElementById('mobile-hamburger')) {
           const btn = document.createElement('button');
@@ -118,15 +123,15 @@
           btn.className = 'mobile-hamburger';
           btn.setAttribute('aria-label', 'Open menu');
           btn.setAttribute('aria-expanded', 'false');
-          btn.innerHTML = '<span class=\"bar bar1\"></span><span class=\"bar bar2\"></span><span class=\"bar bar3\"></span>';
-          // insert as first child
-          topnav.insertBefore(btn, topnav.firstChild);
+          btn.innerHTML = '<span class="bar bar1"></span><span class="bar bar2"></span><span class="bar bar3"></span>';
+          // insert into topbar
+          topbar.appendChild(btn);
           // right logo container (if not exists)
           if (!document.querySelector('.mobile-logo-right')) {
             const logoBox = document.createElement('div');
             logoBox.className = 'mobile-logo-right';
-            logoBox.innerHTML = '<div class=\"logo-square\">DCH</div><div class=\"logo-text\">Dhamrai Clay Heritage</div>';
-            topnav.appendChild(logoBox);
+            // logoBox.innerHTML = '<div class="logo-square">DCH</div><div class="logo-text">Dhamrai Clay Heritage</div>';
+            topbar.appendChild(logoBox);
           }
           // create slide menu
           const menu = document.createElement('nav');
